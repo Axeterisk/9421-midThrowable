@@ -61,6 +61,54 @@ public class Utility {
             Take the stack of tokens from parseInput()
             Then output a table of values shown on PAGES 11-12
      */
+    
+    /**
+ * Method Description: Create a method that converts an infix expression into a postfix expression through a stack data structure
+ *                     From left to right, an operand is added to a postfix form. The operator and parenthesis will then be
+ *                     added to the stack,
+ * ALGORITHM:
+ * Instantiate current = stack.getTop()
+ * Instantiate operatorStack
+ * Instantiate postFixStack
+ * Instantiate d
+ * print table headings
+ * while current is not null
+ *      print current
+ *      if current contains a (
+ *          print postFixStack
+ *          push current to operator's stack
+ *          print operatorStack
+ *      if current contains a )
+ *          while current does not contain (
+ *              pop operatorStack and push to postFixStack
+ *              if operatorSTack contains (
+ *                  pop operatorStack and push to d
+ *                  print postFixStack
+ *                  print operatorStack
+ *                  break
+ *      if current contains an operator
+ *          while icp of current < isp of operatorStack
+ *              pop operatorStack and push to postFixStack
+ *      else if icp of current > isp of operatorStack
+ *          print postFixStack
+ *          push current to operatorStack
+ *          print operatorStack
+ *      if current is an exponent operator
+ *          if operatorStack is empty
+ *              print postFixStack
+ *              push current to operatorStack
+ *              print operatorStack
+ *      if current contains an operand
+ *          print postFixStack
+ *          push/concatenate current to operator's stack
+ *          print operatorStack
+ *      get link of current
+ * if operatorStack is empty
+ *      pop operatorStack and push it to postFixStack
+ *      print postFixStack
+ *      print operatorStack
+ */
+    
     static void infixToPostfixTable(LinkedStack<Token> stack) {
 
         Node<Token> current = stack.getTop();
